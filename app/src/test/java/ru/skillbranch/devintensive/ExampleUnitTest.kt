@@ -53,12 +53,25 @@ class ExampleUnitTest {
 
     @Test
     fun test_humanizeDiff() {
-        println(Date().add(-2, TimeUnits.HOUR).humanizeDiff()) //2 часа назад
-        println(Date().add(-5, TimeUnits.DAY).humanizeDiff()) //5 дней назад
-        println(Date().add(2, TimeUnits.MINUTE).humanizeDiff()) //через 2 минуты
-        println(Date().add(7, TimeUnits.DAY).humanizeDiff()) //через 7 дней
-        println(Date().add(-400, TimeUnits.DAY).humanizeDiff()) //более года назад
-        println(Date().add(400, TimeUnits.DAY).humanizeDiff()) //более чем через год
+        println(Date().add(-5, TimeUnits.MINUTE).humanizeDiff())    //5 минут назад
+        println(Date().add(-3, TimeUnits.MINUTE).humanizeDiff())    //3 минуты назад
+        println(Date().add(-5, TimeUnits.HOUR).humanizeDiff())      //5 часов назад
+        println(Date().add(-3, TimeUnits.HOUR).humanizeDiff())      //3 часа назад
+        println(Date().add(-2, TimeUnits.DAY).humanizeDiff())       //2 дня назад
+        println(Date().add(-5, TimeUnits.DAY).humanizeDiff())       //5 дней назад
+        println(Date().add(-400, TimeUnits.DAY).humanizeDiff())     //более года назад
+
+        println()
+        println(Date().humanizeDiff())    //только что
+        println()
+        println(Date().add(5, TimeUnits.MINUTE).humanizeDiff())    //через  5 минут
+        println(Date().add(3, TimeUnits.MINUTE).humanizeDiff())    //через 3 минуты
+        println(Date().add(5, TimeUnits.HOUR).humanizeDiff())      //через 5 часов
+        println(Date().add(3, TimeUnits.HOUR).humanizeDiff())      //через 3 часа
+        println(Date().add(2, TimeUnits.DAY).humanizeDiff())       //через 2 дня
+        println(Date().add(5, TimeUnits.DAY).humanizeDiff())       //через 5 дней
+        println(Date().add(400, TimeUnits.DAY).humanizeDiff())     //более чем через год
+
        }
 
     @Test
