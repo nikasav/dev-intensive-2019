@@ -118,17 +118,6 @@ class ExampleUnitTest {
             ${user3.lastVisit?.format()}
             ${user4.lastVisit?.format()}
         """.trimIndent())
-//        if (user === user2)
-//        {
-//            println("equals data and hash \n${user.hashCode()} $user \n${user2.hashCode()} $user2")
-//        }else
-//            println("not equals data and hash \n${user.hashCode()} $user \n${user2.hashCode()} $user2")
-//
-//        if (user === user2)
-//        {
-//            println("equals address ${System.identityHashCode(user)} ${System.identityHashCode(user2)}")
-//        }else
-//            println("not equals address ${System.identityHashCode(user)} ${System.identityHashCode(user2)}")
     }
 
     @Test
@@ -143,11 +132,9 @@ class ExampleUnitTest {
     @Test
     fun test_abstract_factory() {
         val user = User.makeUser("Макеев Михаил")
-        val textMessage =  BaseMessage.makeMassege(user, Chat("0"), payload = "any text message", type = "text")
-        val imgMessage =  BaseMessage.makeMassege(user, Chat("0"), payload = "any image url", type = "image")
 
-        println(textMessage.formatMessage())
-        println(imgMessage.formatMessage())
+        println(BaseMessage.makeMessage(user, Chat("0"), Date(),"text",  "any text message").formatMessage()) //Василий отправил сообщение "any text message" только что
+        println(BaseMessage.makeMessage(user, Chat("0"), Date(), "image", "https://anyurl.com").formatMessage()) //Василий получил изображение "https://anyurl.com" 2 часа назад
     }
 
 }
